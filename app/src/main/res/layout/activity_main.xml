@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_send_in"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="send Object (in)"
+
+        app:layout_constraintBottom_toTopOf="@+id/btn_send_out"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="HardcodedText" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_send_out"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/send_object_out"
+
+        app:layout_constraintBottom_toTopOf="@+id/btn_send_inout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_send_in" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_send_inout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/send_object_inout"
+
+        app:layout_constraintBottom_toTopOf="@+id/btn_get"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_send_out" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_get"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/get_object"
+
+        app:layout_constraintBottom_toTopOf="@+id/btn_async_work"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_send_inout" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_async_work"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/do_async_work"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_get" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_indicator"
+        style="@style/Widget.Material3.CircularProgressIndicator.ExtraSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:indeterminate="true"
+
+        app:layout_constraintBottom_toBottomOf="@+id/tv_async_result"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_async_result" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_async_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/async_result"
+        android:textAppearance="?attr/textAppearanceLabelLarge"
+
+        app:layout_constraintStart_toEndOf="@+id/progress_indicator"
+        app:layout_constraintTop_toBottomOf="@+id/tv_service_connection" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_async_result_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textAppearance="?attr/textAppearanceBodyLarge"
+
+        app:layout_constraintStart_toStartOf="@+id/tv_async_result"
+        app:layout_constraintTop_toBottomOf="@+id/tv_async_result" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_service_connection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/service_connection"
+        android:textAppearance="?attr/textAppearanceTitleLarge"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_connection_indicator"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/tv_service_connection"
+        app:layout_constraintStart_toEndOf="@+id/tv_service_connection"
+        app:layout_constraintTop_toTopOf="@+id/tv_service_connection"
+        app:srcCompat="@drawable/ic_indicator"
+        tools:ignore="ContentDescription" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_kill_process"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/kill_process"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

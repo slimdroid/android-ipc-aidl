@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">IPC AIDL</string>
+    <string name="send_object_out">send Object (out)</string>
+    <string name="send_object_inout">send Object (inout)</string>
+    <string name="get_object">get Object</string>
+    <string name="do_async_work">do async work</string>
+    <string name="async_result">Async Result:</string>
+    <string name="service_connection">Service connection</string>
+    <string name="kill_process">Kill service process</string>
+</resources>
